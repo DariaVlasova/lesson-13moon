@@ -1,0 +1,248 @@
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	line-height: 1;
+	/* color: #000; */
+	/* font-family:""; */
+	overflow-x: hidden;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: #333;
+}
+.wrapper {
+	min-height: 100%;
+	padding: 30px;
+}
+.moon{
+ display: block;
+}
+.moon__block{
+	transform: translate(300px,-600px);
+}
+.moon__moon{
+  animation: moon 60s 1s linear infinite;
+}
+.moon__moon:hover {
+	animation-play-state: paused;
+}
+@keyframes moon {
+	0% {
+		transform: rotate(0deg);
+		
+	}
+	
+	100% {
+		
+		transform: rotate(180deg);
+	}
+}
+.moon__title{
+	transform: translate(-15px,-360px);
+	font-size: 115px;
+	font-family: Arial, Helvetica, sans-serif;
+	color:aqua;
+	animation: title 3s linear 1s forwards;
+	opacity: 0;
+}
+.moon__text{
+	transform: translate(90px,-290px);
+	font-size: 24px;
+	font-family: Arial, Helvetica, sans-serif;
+	color:white;
+	width: 400px;
+	transition: all;
+	animation: tet 3s linear 1s forwards;
+	opacity: 0;
+}
+@keyframes title{
+	0%{
+		transform: translate(0, 50%);
+opacity: 0;
+	}
+	100%{
+		transform: translate(-15px,-310px);
+		opacity: 1;
+	}
+}
+@keyframes tet{
+	0%{
+		transform: translate(0, 50%);
+		opacity: 0;
+	}
+	100%{
+		transform: translate(90,-210px);
+		opacity: 1;
+	}
+}
+.button{
+	margin: 0 auto;
+	background-color: aqua;
+	border-radius: 50px;
+	padding: 20px;
+	max-width: 165px;
+	color: rgb(15, 1, 1);
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.crescent {
+	margin: 0px 0px 50px 0px;
+	border-bottom: 3px solid rgb(43, 43, 43);
+}
+.crescent__body {
+	overflow: hidden;
+	width: 500px;
+	height: 500px;
+	transform-origin: 53.333% 68.666%;
+	animation: crescent-anim 5s 1 ease-out 1s forwards;
+}
+.crescent__item {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: relative;
+	animation: crescent-init 1s 1 linear forwards;
+}
+.crescent__item::before {
+	background-color: #333;
+	border-radius: 50%;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	animation: crescent-shadow 1s 1 linear forwards;
+}
+@keyframes crescent-anim {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(20deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	75% {
+		transform: rotate(20deg);
+	}
+	100% {
+		transform: rotate(15deg);
+	}
+}
+@keyframes crescent-init {
+	0% {
+		transform: translate(-30%, 0px);
+	}
+	100% {
+		transform: rotate(45deg) translate(0px, 0px);
+	}
+}
+@keyframes crescent-shadow {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	100% {
+		transform: translate(-16.666%, 16.666%);
+	}
+}
+
+.clock {
+	border-top: 3px solid rgb(83, 83, 83);
+	height: 500px;
+	max-width: 900px;
+	margin: 0px auto;
+}
+.clock__item {
+	position: relative;
+	width: 1px;
+}
+.clock__item::before {
+	content: "";
+	position: absolute;
+	width: 2px;
+	top: 0;
+	height: 300px;
+	background-color: rgb(83, 83, 83);
+	transform-origin: 0 0;
+}
+.clock__item::after {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top: 300px;
+	left: 0%;
+	transform: translate(-50%, 0px);
+	content: "";
+}
+.clock__item:nth-child(1) {
+	left: 40%;
+	animation: item-1 1s infinite ease-in-out alternate 0s;
+}
+.clock__item:nth-child(2) {
+	left: 50%;
+}
+.clock__item:nth-child(3) {
+	left: 60%;
+	animation: item-2 1s infinite ease-in-out alternate 0s;
+}
+
+@keyframes item-1 {
+	0% {
+		transform: rotate(45deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+}
+@keyframes item-2 {
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-45deg);
+	}
+}
